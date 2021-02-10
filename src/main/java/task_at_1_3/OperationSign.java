@@ -18,7 +18,6 @@ public enum OperationSign {
     }
 
     public static OperationSign fromTitle(String title) {
-
         for (OperationSign value : values()) {
             if (value.getTitle().equalsIgnoreCase(title)) {
                 return value;

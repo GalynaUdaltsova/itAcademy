@@ -17,7 +17,7 @@ public class OperationExecutor {
     public static void executeOperation() {
         double firstNumber = getNumberFromUser(FIRST_NUMBER_MESSAGE);
         double secondNumber = getNumberFromUser(SECOND_NUMBER_MESSAGE);
-        IOperator operator = defineOperator(OPERATION_MESSAGE);
+        IOperator operator = defineOperator();
         if (OperationSign.DIVIDE == operator.getSupportedOperation() && secondNumber == 0) {
             while (secondNumber == 0) {
                 secondNumber = getNumberFromUser(ZERO_DIVISION_ERROR_MESSAGE);
@@ -38,10 +38,10 @@ public class OperationExecutor {
         }
     }
 
-    private static IOperator defineOperator(String message) {
+    private static IOperator defineOperator() {
         OperatorsFactory operatorsFactory = new OperatorsFactory();
         IOperator operator = null;
-        System.out.println(message);
+        System.out.println(OPERATION_MESSAGE);
         while (operator == null) {
             Scanner scanner = new Scanner(System.in);
             String operationTitle = scanner.next();

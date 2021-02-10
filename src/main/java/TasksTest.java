@@ -5,7 +5,6 @@ import task_at_1_3_add.OperationExecutor;
 
 public class TasksTest {
     public static void main(String[] args) {
-
         ArrayOperator.fillArrayWithData();
         TextOperator.calculateTheAverageLengthOfLines();
         NumberOperator.executeMathematicalOperations();
