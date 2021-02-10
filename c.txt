@@ -1,6 +1,0 @@
-Hello
-\Hello
-Hello World!-C1
-Hello World!-C2
-Hello World!-C3
-Hello World!-C4
