@@ -4,7 +4,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class ArrayOperator {
     public static void fillArrayWithData() {
-
         int[] arrayOfRandomNumbers = new int[50];
 
         for (int i = 0; i < arrayOfRandomNumbers.length; i++) {
