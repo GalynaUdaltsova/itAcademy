@@ -14,10 +14,7 @@ public class NumberOperator {
     public static void executeMathematicalOperations() {
         double firstNumber = getNumberFromUser(FIRST_NUMBER_MESSAGE);
         double secondNumber = getNumberFromUser(SECOND_NUMBER_MESSAGE);
-        System.out.println(OPERATION_MESSAGE);
-        Scanner scanOperator = new Scanner(System.in);
-        String operationSignName = scanOperator.next();
-        OperationSign operationSign = OperationSign.fromTitle(operationSignName);
+        OperationSign operationSign = getOperationSign();
         if (operationSign == OperationSign.DIVIDE && secondNumber == 0) {
             while (secondNumber == 0) {
                 secondNumber = getNumberFromUser(ZERO_DIVISION_ERROR_MESSAGE);
@@ -53,6 +50,19 @@ public class NumberOperator {
             } catch (InputMismatchException e) {
                 System.out.println(WRONG_NUMBER_ERROR_MESSAGE);
             }
+        }
+    }
+    private static OperationSign getOperationSign() {
+        System.out.println(NumberOperator.OPERATION_MESSAGE);
+
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            String operator = scanner.next();
+            OperationSign operationSign = OperationSign.fromTitle(operator);
+            if(operationSign != null) {
+                return operationSign;
+            }
+            System.out.println("You entered unsupported operation, please try again");
         }
     }
 }
