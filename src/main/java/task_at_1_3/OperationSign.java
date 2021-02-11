@@ -23,6 +23,6 @@ public enum OperationSign {
                 return value;
             }
         }
-        throw new IllegalArgumentException(String.format("Operator sign not found for %s", title));
+        return null;
     }
 }
